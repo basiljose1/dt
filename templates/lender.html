@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<title>EContracting - Lender Eligibility</title>
+
+	<meta charset="utf-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+	<div class="container-fluid">
+	  	<h1>EContracting - Lender Eligibility</h1>
+	  	<div class="row">
+	  		<div>
+	  			<h4>Lender</h4>
+	  			{% for field in form %}
+			    <div class="col-sm-2">
+			        {{ field.label_tag }} 
+			    </div>
+				{% endfor %}
+		  		{% for field in form %}
+			    <div class="col-sm-2">
+			    	<div class="select-style">
+			    		{{ field.errors }}
+			        {{ field }}
+			    		
+			    	</div>
+			    </div>
+				{% endfor %}
+	  		</div>
+		</div>
+	</div>
+</body>
+<style type="text/css">
+	.select-style {
+	    border: 1px solid #ccc;
+	    /*width: 120px;*/
+	    border-radius: 3px;
+	    overflow: hidden;
+	    background: #fafafa;
+	}
+
+	.select-style select {
+	    padding: 5px 8px;
+	    /*width: 80%;*/
+	    border: none;
+	    box-shadow: none;
+	    background: transparent;
+	    background-image: none;
+	    -webkit-appearance: none;
+	}
+
+	.select-style select:focus {
+	    outline: none;
+	}
+
+	.select-style {position:relative}
+	.select-style:after {
+	    content:'<>';
+	    font:15px "Consolas", monospace;
+	    color:#aaa;
+	    -webkit-transform:rotate(90deg);
+	    -moz-transform:rotate(90deg);
+	    -ms-transform:rotate(90deg);
+	    transform:rotate(90deg);
+	    right:8px; top:2px;
+	    padding:0 0 2px;
+	    border-bottom:1px solid #ddd;
+	    position:absolute;
+	    pointer-events:none;
+	}
+	
+
+	/* The CSS */
+	select {
+	    width: 100%;
+	    cursor:pointer;
+	}
+</style>
+</html>
